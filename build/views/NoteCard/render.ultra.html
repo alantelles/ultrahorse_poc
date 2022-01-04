@@ -1,0 +1,14 @@
+@function render() : NoteCard self
+<div class="card">
+    <div class="card-header">{{ self.title }}</div>
+    <div class="card-content">{{ self.content }}</div>
+    <div class="card-footer">
+        <a href="/note">
+            <button class="btn btn-primary">
+                Visit 
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </a>
+    </div>
+</div>
+@end

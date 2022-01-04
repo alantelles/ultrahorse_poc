@@ -1,0 +1,37 @@
+@function render() : Base self
+@self.components.localize()
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,900;1,100;1,300;1,400;1,900&display=swap" rel="stylesheet"> 
+    <script src="https://kit.fontawesome.com/e24afa3c0d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="http://ultrahorse.static/css/reset.css">
+    <link rel="stylesheet" href="http://ultrahorse.static/css/styles.css">
+    <link rel="stylesheet" href="http://ultrahorse.static/css/forms.css">
+    <title>Notes</title>
+</head>
+<body>
+    <div class="container">
+        <!-- <div class="toolbar">
+            <a href="/"><h3>Notes</h3></a>
+        </div> -->
+        {{ toolbar.render() }}
+
+        <div class="nav-content">
+            {{ sidenav.render() }}
+            <div class="content-container">
+                <div class="content">
+                    <h1 class="page-header">{{ self.pageTitle }}</h1>
+                    {{ content.render() }}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+@end

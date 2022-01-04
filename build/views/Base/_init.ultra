@@ -1,0 +1,6 @@
+class Base
+
+function init(pageTitle, Dict components = {}) : Base self    
+end
+
+include 'views/Base/render.ultra.html'

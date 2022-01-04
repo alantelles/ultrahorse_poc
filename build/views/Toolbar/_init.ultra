@@ -1,0 +1,3 @@
+class Toolbar
+
+include 'views/Toolbar/render.ultra.html'

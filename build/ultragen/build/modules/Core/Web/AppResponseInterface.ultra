@@ -1,0 +1,33 @@
+if (!assigned AppResponse)
+    if (assigned $request[:server])
+        if(typeof($request[:server]) == String)
+            poweredBy = $request[:server]
+            if (poweredBy == "FPWeb")
+                include @Core.Web.AppResponse
+            elsif (poweredBy == "Brook")
+                include @Core.Brook.AppResponse
+            else
+                raise("No AppResponse implementation found for '" + poweredBy + "' server.", 'AppResponse')
+            end
+        else
+            raise("No server engine set or set engine is not a string. Can't load any AppResponse implementation.", 'AppResponse')   
+        end
+    else
+        raise("No $request dictionary passed from internal request handler", 'AppResponse')
+    end
+end
+
+function setHeaders(pairs) : AppResponse self
+    for(pairs.keys(), key)
+        self.headers[key] = pairs[key]
+    end
+end
+
+function contentType(type) : AppResponse self
+    self.headers['Content-Type'] = type
+end
+
+function init() : AppResponse self
+    self.headers = {}
+    self.cookies = {}
+end

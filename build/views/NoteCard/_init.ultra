@@ -1,0 +1,6 @@
+class NoteCard
+
+function init(title, content, id) : NoteCard self
+end
+
+include 'views/NoteCard/render.ultra.html'

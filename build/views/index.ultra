@@ -1,0 +1,42 @@
+$fromHorse.localize()
+
+include 'views/Toolbar'
+include 'views/Base'
+include 'views/Sidenav'
+
+menuItems = [
+    {:link: '/', :text: 'Home', :icon: 'home'},
+    {:link: '/note', :text: 'Note', :icon: 'sticky-note'}
+    {:link: '/new', :text: 'New note', :icon: 'sticky-note', :regular: true}
+]
+
+
+toolbar = new Toolbar()
+sidenav = new Sidenav(menuItems)
+
+contentMap = {
+    null: {
+        :component: :NotesList,
+        :pageTitle: 'All notes'
+    },
+    :note: {
+        :component: :NoteDetail,
+        :pageTitle: 'Note #1'
+    },
+    :newNote: {
+        :component: :NewNote,
+        :pageTitle: 'New note'
+    }
+}
+
+ContentIncluded = include 'views/' + (contentMap[route][:component])
+pageTitle = contentMap[route][:pageTitle]
+content = new ContentIncluded($fromHorse)
+
+base = new Base(pageTitle, {
+    :toolbar: toolbar,
+    :sidenav: sidenav,
+    :content: content
+})
+
+live base.render()

@@ -1,0 +1,6 @@
+class Sidenav
+
+function init(List items) : Sidenav self
+end
+
+include 'views/Sidenav/render.ultra.html'

@@ -1,0 +1,7 @@
+@function render() : NotesList self
+<div class="cards-container">
+@   for(self.noteCards, card)
+    {{ card.render() }}
+@   end    
+</div>
+@end

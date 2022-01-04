@@ -1,0 +1,12 @@
+@function render() : Sidenav self
+<div class="sidenav">
+    <ul class="nav">
+@       for(self.items, item)
+        <li><a href="{{ item[:link] }}">
+            <i class="fa{{ $test(item.get(:regular), 'r', 's') }} fa-{{ item[:icon] }}"></i>
+            {{ item[:text] }}
+        </a></li>
+@       end
+    </ul>
+</div>
+@end

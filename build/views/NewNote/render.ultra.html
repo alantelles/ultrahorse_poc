@@ -1,0 +1,18 @@
+@function render() : NewNote self
+<form action="/new" method="post">
+    <div class="form">
+        <div class="form-control-group">
+            <label for="title" class="form-control-label">Title</label>
+            <input type="text" name="title" id="title" class="form-control-input">
+        </div>
+        <div class="form-control-group">
+            <label for="content" class="form-control-label">Content <small>(the text of your note)</small></label>
+            <textarea name="content" id="content" class="form-control-textarea"></textarea>
+        </div>
+        <button class="btn btn-primary form-button">
+            <i class="fas fa-bookmark"></i>
+            Save
+        </button>
+    </div>
+</form>
+@end

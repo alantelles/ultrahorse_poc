@@ -1,0 +1,6 @@
+@function render() : NoteDetail self
+<div class="note-detail">
+    <h2 class="note-header">{{ self.context[:title] }}</h2>
+    <p class="note-content">{{ self.context[:content] }}</p>
+</div>
+@end
