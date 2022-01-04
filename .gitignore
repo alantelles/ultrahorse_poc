@@ -29,7 +29,4 @@ lib/
 # Application bundle for Mac OS
 *.app/
 
-
-build/bin/ultragen
-build/bin/sessions/*
-!build/bin/sessions/.keepvsws.code-workspace
+build/ultrahorse
