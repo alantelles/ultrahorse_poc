@@ -9,10 +9,7 @@
             <label for="content" class="form-control-label">Content <small>(the text of your note)</small></label>
             <textarea name="content" id="content" class="form-control-textarea"></textarea>
         </div>
-        <button class="btn btn-primary form-button">
-            <i class="fas fa-bookmark"></i>
-            Save
-        </button>
+        {{ Button.primary((Icon.show(:save, false)) + 'Update', ['form-button']) }}
     </div>
 </form>
 @end

@@ -1,6 +1,3 @@
 class NewNote
 
-function init(context) : NewNote self
-end
-
 include 'views/NewNote/render.ultra.html'

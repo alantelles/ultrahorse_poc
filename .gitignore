@@ -29,4 +29,6 @@ lib/
 # Application bundle for Mac OS
 *.app/
 
+db.sqlite3
+
 build/ultrahorse

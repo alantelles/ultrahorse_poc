@@ -1,6 +1,3 @@
 class NoteDetail
 
-function init(context) : NoteDetail self    
-end
-
 include 'views/NoteDetail/render.ultra.html'

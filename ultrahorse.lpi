@@ -30,7 +30,7 @@
         <PackageName Value="BrookTardigrade"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="4">
+    <Units Count="5">
       <Unit0>
         <Filename Value="ultrahorse.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -49,6 +49,11 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="ViewProcessor"/>
       </Unit3>
+      <Unit4>
+        <Filename Value="src/remindersservice.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="RemindersService"/>
+      </Unit4>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -58,7 +63,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="../horse-2.0.14/src;src;../ultragen/src/Units;../ultragen/src/BuiltInTypes;../ultragen/src/Symbols;../ultragen/src/ActRecords;../ultragen/src/ASTs;../ultragen/src/Exceptions;../ultragen/src/Utils;../ultragen/src/Core;../ultragen/src/Utils/JsonTools;../ultragen/src/Utils/MarkdownParser;../ultragen/src/BootStrap"/>
+      <OtherUnitFiles Value="../horse-2.0.14/src;src;../ultragen/src/Units;../ultragen/src/BuiltInTypes;../ultragen/src/Symbols;../ultragen/src/ActRecords;../ultragen/src/ASTs;../ultragen/src/Exceptions;../ultragen/src/Utils;../ultragen/src/Core;../ultragen/src/Utils/JsonTools;../ultragen/src/Utils/MarkdownParser;../ultragen/src/BootStrap;../dataset-serialize-2.3.5/src"/>
       <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
   </CompilerOptions>

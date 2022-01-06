@@ -1,6 +1,22 @@
+include @Core.DateTime
+include 'views/Helpers.ultra'
+
 class NoteCard
 
-function init(title, content, id) : NoteCard self
+function init(note) : NoteCard self
+end
+
+function conformContent() : NoteCard self
+    cropped = self.note[:content].slice(0, 80)
+    seeMore = $test((self.note[:content].length()) > 80, '...', '')
+    conformed = (cropped + seeMore).replace('\n', '<br>')
+    return conformed
+end
+
+function displayCreatedAt(strDate) : NoteCard
+    dateTime = Helpers.strToDate(strDate)
+    text = concat("Created ", dateTime.format("dd'/'mm'/'yyyy"), ' at ', dateTime.format('hh:nn:ss'))
+    return text
 end
 
 include 'views/NoteCard/render.ultra.html'

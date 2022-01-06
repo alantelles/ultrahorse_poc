@@ -1,6 +1,13 @@
 @function render() : NoteDetail self
+@$fromHorse[:data].localize()
 <div class="note-detail">
-    <h2 class="note-header">{{ self.context[:title] }}</h2>
-    <p class="note-content">{{ self.context[:content] }}</p>
+    <h2 class="note-header">{{ title }}</h2>
+    <p class="note-content">{{ content.replace('\n', '<br>') }}</p>
+    <div class="actions-container">
+        <form action="/delete/{{ id }}" method="post">
+            {{ Button.danger('Delete') }}
+        </form>
+        <a href="/edit/{{ id }}">{{ Button.primary('Edit') }}</a>
+    </div>
 </div>
 @end

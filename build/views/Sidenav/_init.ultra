@@ -1,3 +1,5 @@
+include 'views/MenuItem'
+
 class Sidenav
 
 function init(List items) : Sidenav self

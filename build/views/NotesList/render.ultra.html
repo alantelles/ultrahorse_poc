@@ -2,6 +2,9 @@
 <div class="cards-container">
 @   for(self.noteCards, card)
     {{ card.render() }}
-@   end    
+@   end
+@   if ((self.noteCards.length()) == 0)
+    <h3>There is no note to show.</h3>
+@   end
 </div>
 @end

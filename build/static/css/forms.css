@@ -32,3 +32,10 @@
 .form-button {
     max-width: fit-content;
 }
+
+.actions-container {
+    display: flex;    
+}
+.actions-container > * {
+    margin-right: 10px;
+}

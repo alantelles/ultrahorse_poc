@@ -1,9 +1,12 @@
 @function render() : NoteCard self
+@self.note.localize()
 <div class="card">
-    <div class="card-header">{{ self.title }}</div>
-    <div class="card-content">{{ self.content }}</div>
+    <div class="card-header">{{ title }}</div>
+    <div class="card-content">{{ self.conformContent() }}</div>
     <div class="card-footer">
-        <a href="/note">
+        <span class="card-note-created">{{ NoteCard.displayCreatedAt(createdAt) }}</span>
+        <span class="spacer"></span>
+        <a href="/note/{{ id }}">
             <button class="btn btn-primary">
                 Visit 
                 <i class="fas fa-arrow-right"></i>

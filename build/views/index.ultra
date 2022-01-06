@@ -1,12 +1,14 @@
 $fromHorse.localize()
 
+include 'views/ui-kit/Button'
+include 'views/ui-kit/Icon'
+
 include 'views/Toolbar'
 include 'views/Base'
 include 'views/Sidenav'
 
 menuItems = [
     {:link: '/', :text: 'Home', :icon: 'home'},
-    {:link: '/note', :text: 'Note', :icon: 'sticky-note'}
     {:link: '/new', :text: 'New note', :icon: 'sticky-note', :regular: true}
 ]
 
@@ -21,17 +23,29 @@ contentMap = {
     },
     :note: {
         :component: :NoteDetail,
-        :pageTitle: 'Note #1'
+        :pageTitle: 'Note detail'
     },
     :newNote: {
         :component: :NewNote,
         :pageTitle: 'New note'
+    },
+    :edit: {
+        :component: :EditNote,
+        :pageTitle: 'Edit note'
     }
 }
 
-ContentIncluded = include 'views/' + (contentMap[route][:component])
-pageTitle = contentMap[route][:pageTitle]
-content = new ContentIncluded($fromHorse)
+match = contentMap[route]
+
+pageTitle = match[:pageTitle]
+
+component = 'views/' + (match[:component])
+ContentIncluded = include component
+content = new ContentIncluded()
+
+if (($fromHorse.get(:data)))
+    $fromHorse.set(:data, JSON.parse(data))
+end
 
 base = new Base(pageTitle, {
     :toolbar: toolbar,

@@ -2,9 +2,12 @@ include 'views/NoteCard'
 
 class NotesList
 
-function init(context) : NotesList self
+function init() : NotesList self
+    serialized = JSON.parse($fromHorse[:data])
     self.noteCards = []
-    self.noteCards.append(new NoteCard('My note', 'This is my first note', 1))
+    for(serialized, record)
+        self.noteCards.append(new NoteCard(record))
+    end
 end
 
 include 'views/NotesList/render.ultra.html'
